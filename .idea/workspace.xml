@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef7c5e9-6870-4ca0-a64f-594641fb1e10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Talley-C-stuff-B22HW6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Attack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/State.java" afterDir="false" />
+    <list default="true" id="bef7c5e9-6870-4ca0-a64f-594641fb1e10" name="Changes" comment="Setting up everything&#10;&#10;Problem: code rn is written in 0-based system, while the HW asked for 1 based input.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +65,16 @@
       <option name="presentableId" value="Default" />
       <updated>1670884933914</updated>
       <workItem from="1670884935779" duration="8689000" />
-      <workItem from="1670960520945" duration="10407000" />
+      <workItem from="1670960520945" duration="11030000" />
     </task>
+    <task id="LOCAL-00001" summary="Setting up everything&#10;&#10;Problem: code rn is written in 0-based system, while the HW asked for 1 based input.">
+      <created>1670974796856</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670974796856</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,5 +90,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setting up everything&#10;&#10;Problem: code rn is written in 0-based system, while the HW asked for 1 based input." />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up everything&#10;&#10;Problem: code rn is written in 0-based system, while the HW asked for 1 based input." />
   </component>
 </project>

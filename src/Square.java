@@ -26,6 +26,7 @@ public class Square {
     }
 
     // get all of the squared that are attacked by the queen at your position
+    // all attackers and 1-based, NOT 0-based
     public static ArrayList<int[]> getAttacks(int[] position,int size){
         ArrayList<int[]> attacks = new ArrayList<>();
 
@@ -41,39 +42,39 @@ public class Square {
 
     }
 
-    // horizontal attacks
-    public static ArrayList<int[]> getHAttacks(int[] position,int size){
-        ArrayList<int[]> hAttacks = new ArrayList<>();
-        int row = position[0];
-        int col = position[1];
-        // add all position from top to bottom that dont include {row,col}
-        for (int i = 0;i< size; i++){
-            if(i!= row){
-                int[] anAttack = {i,col};
-                hAttacks.add(anAttack);
-            }
-        }
-       printAttacks(hAttacks);
-//        hAttacks.forEach( attack -> System.out.print(Arrays.toString(attack)+", "));
-//        System.out.println();
-        return hAttacks;
-    }
-
     // vertical attacks
     public static ArrayList<int[]> getVAttacks(int[] position,int size){
         ArrayList<int[]> vAttacks = new ArrayList<>();
         int row = position[0];
         int col = position[1];
-        // add all position from left to right that dont include {row,col}
-        for (int i = 0;i< size; i++){
-            if(i!= col){
-                int[] anAttack = {row,i};
+        // add all position from top to bottom that dont include {row,col}
+        for (int i = 1;i<= size; i++){
+            if(i!= row){
+                int[] anAttack = {i,col};
                 vAttacks.add(anAttack);
             }
         }
-
        printAttacks(vAttacks);
+//        hAttacks.forEach( attack -> System.out.print(Arrays.toString(attack)+", "));
+//        System.out.println();
         return vAttacks;
+    }
+
+    // horizontal attacks
+    public static ArrayList<int[]> getHAttacks(int[] position,int size){
+        ArrayList<int[]> hAttacks = new ArrayList<>();
+        int row = position[0];
+        int col = position[1];
+        // add all position from left to right that dont include {row,col}
+        for (int i = 1;i<= size; i++){
+            if(i!= col){
+                int[] anAttack = {row,i};
+                hAttacks.add(anAttack);
+            }
+        }
+
+       printAttacks(hAttacks);
+        return hAttacks;
 
     }
 
@@ -84,23 +85,23 @@ public class Square {
         int col = position[1];
 
         // get upper right diagonal (till close to top right corner)
-        for (int i = row-1, j =col+1; (i >=0 && j<size); i--, j++){
+        for (int i = row-1, j =col+1; (i >=1 && j<=size); i--, j++){
                 int[] anAttack = {i,j};
                 dAttacks.add(anAttack);
         }
 
 //         get upper left diagonal (till close to top left corner)
-        for (int i = row-1, j =col-1; (i >=0 && j>=0); i--, j--){
+        for (int i = row-1, j =col-1; (i >=1 && j>=1); i--, j--){
             int[] anAttack = {i,j};
             dAttacks.add(anAttack);
         }
 //         get lower left diagonal (till close to top right corner)
-        for (int i = row+1, j =col-1; (i < size && j>=0); i++, j--){
+        for (int i = row+1, j =col-1; (i <=size && j>=1); i++, j--){
             int[] anAttack = {i,j};
             dAttacks.add(anAttack);
         }
         // get lower right diagonal (till close to top right corner)
-        for (int i = row+1, j =col+1; (i <size && j<size); i++, j++){
+        for (int i = row+1, j =col+1; (i <=size && j<=size); i++, j++){
             int[] anAttack = {i,j};
             dAttacks.add(anAttack);
         }
