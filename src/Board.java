@@ -19,13 +19,8 @@ public class Board {
 //
 //    }
 
-    // convert number positions arrayList to an arrayList of square objects
-    public ArrayList<Square> convertArrToSquareArr(ArrayList<Integer> numPos){
-        ArrayList<Square> positions = new ArrayList<>();
-//        numPos.forEach(num -> );
-        return positions;
-    }
-    public void getQueenAttacks(int[][] posiions, int size){
+
+    public void getQueenAttacks(int[][] posions, int size){
 
 
     }
@@ -44,7 +39,20 @@ public class Board {
     // make sure it's the first solution
     // get same solution each time
 
-    public static void printBoard(ArrayList<Square> positions, int size){
+    // convert number positions arrayList to an arrayList of square objects
+    public static  ArrayList<Square> convertArrToSquareArr(int[] numPos,int size){
+        ArrayList<Square> positions = new ArrayList<>();
+        for(int i =0; i<size; i++){
+            // make i + 1 our row (+1 for 1-based positions)
+            int intRow = i+1;
+            int intCol = numPos[i];
+            Square aPosition = Square.intToSquare(intRow,intCol,size);
+            positions.add(aPosition);
+        }
+        return positions;
+    }
+    public static void printBoard(int[] intPositions, int size){
+        ArrayList<Square> positions = convertArrToSquareArr(intPositions,size);
         char[][] chessBoard = new char[size][size];
         // make default empty game board
         for(int i = 0; i<size; i++){
@@ -61,7 +69,8 @@ public class Board {
                 int[] location = aSquare.location;
                 int row = location[0];
                 int col = location[1];
-                chessBoard[row][col] = '*';
+                // subtract one here due to 1-based input
+                chessBoard[row-1][col-1] = '*';
             }
         }
         loadBoard(chessBoard);

@@ -7,14 +7,12 @@ public class Main {
 //        Square.getVAttacks(new int[]{2,2},4);
 //        Square.getHAttacks(new int[]{2,2},4);
 //        Square.getDAttacks(new int[]{2,2},4);
-        Square.getAttacks(new int[]{1,1},4);
+//        Square.getAttacks(new int[]{1,1},4);
 
-//        ArrayList<Square> atS = new ArrayList<>();
-//        for(int i = 0; i<8;i++){
-//            Square at = new Square(new int[] {i,i},8);
-//            atS.add(at);
-//        }
-//       Board.printBoard(atS,8);
+
+       Board.printBoard(new int[] {1,2,3,4,5,6,7,8},8);
+
+//        Board.convertArrToSquareArr(new int[] {1,2,3,0,5,6,7,8}, 8);
 
 
 

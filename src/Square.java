@@ -2,23 +2,30 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Square {
-
     boolean hasQueen;
     int[] location;
     int bSize;
     ArrayList<int[]> attacks;
 
     // empty square
-    Square(int[] location, int bSize){
-        this.hasQueen = true;
+    Square( boolean hasQueen, int[] location, int bSize, ArrayList<int[]> attacks){
+        this.hasQueen = hasQueen;
         this.location = location;
         this.bSize = bSize;
         this.attacks = new ArrayList<>();
     }
 
-    public void intToSquare(int row, int column){
-//        Square()
+    public static Square intToSquare(int row, int col, int size){
+        boolean hasQueen = true;
+        if(col == 0){
+            hasQueen = false;
+        row =0;} // if there is no queen, the position will be 00 (not on the board, b/c 1-based)
+        int[] loc = {row,col};
+        ArrayList<int[]> attacks = getAttacks(loc,size);
 
+        Square square = new Square(hasQueen,loc,size,attacks);
+
+        return square;
     }
 
     public void addQueen(){
@@ -54,7 +61,7 @@ public class Square {
                 vAttacks.add(anAttack);
             }
         }
-       printAttacks(vAttacks);
+//       printAttacks(vAttacks);
 //        hAttacks.forEach( attack -> System.out.print(Arrays.toString(attack)+", "));
 //        System.out.println();
         return vAttacks;
@@ -73,7 +80,7 @@ public class Square {
             }
         }
 
-       printAttacks(hAttacks);
+//       printAttacks(hAttacks);
         return hAttacks;
 
     }
@@ -107,7 +114,7 @@ public class Square {
         }
 
         // add all position down
-        printAttacks(dAttacks);
+//        printAttacks(dAttacks);
         return dAttacks;
     }
     public static void printAttacks(ArrayList<int[]> hAttacks){
