@@ -10,10 +10,11 @@ public class Main {
 //        Square.getAttacks(new int[]{1,1},4);
 
 
-       Board.printBoard(new int[] {1,2,3,4,5,6,7,8},8);
+//       Board.printBoard(new int[] {1,2,3,4,5,6,7,8},8);
 
-//        Board.convertArrToSquareArr(new int[] {1,2,3,0,5,6,7,8}, 8);
+      ArrayList<Square> ss =   Board.convertArrToSquareArr(new int[] {1,2,3,0,5,6,7,8}, 8);
 
+        Board.attacksHaveOverlap(new int[] {1,4,6,8,5,3,1,7},8);
 
 
 

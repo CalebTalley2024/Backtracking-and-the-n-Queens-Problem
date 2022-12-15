@@ -12,9 +12,10 @@ public class Square {
         this.hasQueen = hasQueen;
         this.location = location;
         this.bSize = bSize;
-        this.attacks = new ArrayList<>();
+        this.attacks = attacks;
     }
 
+    // changes an int to a square
     public static Square intToSquare(int row, int col, int size){
         boolean hasQueen = true;
         if(col == 0){
