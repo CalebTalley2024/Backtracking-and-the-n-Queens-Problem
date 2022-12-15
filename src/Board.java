@@ -15,20 +15,65 @@ public class Board {
     // turns a list of numbers into a position
     // with each number, make a square and set attack parameters
 
-//    public ArrayList<Square> listToPosition (){
-//
-//    }
 
-
-    public void getQueenAttacks(int[][] posions, int size){
+    public void nextLegalPosition(int[] position,int n){
+        /*
+         *  Find next move from.....
+         *    1. illegal pos  (could have zeros in btw top row)
+         *    2. legeal pos
+         *    3. legal pos after full solution
+         * 2. */
 
 
     }
 
+    public void nextFromLegalPosition(int[] position,int n){
 
+        int lastRow= n-1;
+        // get last queen index
+        int lastQueenIndex = getLastQueenIndex(position, n);
+        // i is the row
+        // position[i] is the column
+        // if not a full solution, add a queen to the next index
 
+        // check if you are at the last row
+        if(lastQueenIndex ==lastRow) {
+            // if you are on the last row , get rid of the last queen and move the next to last queen to the right
+            // column shouldnt matter if this is a legal position
+            position[lastQueenIndex] = 0;
+            position[lastQueenIndex - 1]++;
+        }
+        // if youre not in the last column,
+        else{
+            // if your queen is  on the last column, add a queen below on the far left
+            position[lastQueenIndex + 1] = 1;
+        }
+        // make a function that will check the next
+    }
 
-    public void nextLegalPosition(Board board,int n){}
+    // full solution: all the squares
+    public void nextFromIllegalPosition(int[] position, int n){
+        int lastColumn =  n-1;
+        // get last queen index
+        int lastQueenIndex = getLastQueenIndex(position, n);
+        // i is the row
+        // position[i] is the column
+        // if not a full solution, add a queen to the next index
+
+        // check if you are at the last row
+        if(lastQueenIndex ==lastColumn) {
+            // if you are on the last row , get rid of the last queen and move the next to last queen to the right
+            // column shouldnt matter if this is a legal position
+            position[lastQueenIndex] = 0;
+            position[lastQueenIndex - 1]++;
+        }
+        // if youre not in the last column,
+        else{
+            // if your queen is  on the last column, add a queen below on the far left
+            position[lastQueenIndex]++;
+        }
+
+    };
 
     // takes in position and n
     // returns True if there are no invalid 0s and no queens attacking each other
@@ -55,11 +100,7 @@ public class Board {
     }
 
 
-
-    // helpers for isLegal Position
-    public static boolean hasInvalidZeros(int[] intPosition, int n){
-        boolean invalid = false;
-        // check where the last position there is a queen
+    public static int getLastQueenIndex(int[] intPosition, int n){
         int lastQueenIndex = 0;
         for(int i  = n-1; i>=0; i--){
 
@@ -68,6 +109,13 @@ public class Board {
                 break;
             }
         }
+        return lastQueenIndex;
+    }
+    // helpers for isLegal Position
+    public static boolean hasInvalidZeros(int[] intPosition, int n){
+        boolean invalid = false;
+        // check where the last position there is a queen
+        int lastQueenIndex = getLastQueenIndex(intPosition,n);
         // make sure that there are no zeros before that last queen
         for(int j = 0; j< lastQueenIndex;j++){
             if(intPosition[j] == 0){

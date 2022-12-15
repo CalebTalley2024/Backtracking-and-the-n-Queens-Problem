@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef7c5e9-6870-4ca0-a64f-594641fb1e10" name="Changes" comment="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: cant use Set, since squares ands attacks with the same address have different object addresses.&#10;&#10;Next: fix checkForAttacks&#10; &#10; deal with Zeros">
+    <list default="true" id="bef7c5e9-6870-4ca0-a64f-594641fb1e10" name="Changes" comment="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1 done&#10;&#10;Next: nextLegalPostition">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,22 +34,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Markdown&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Markdown"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\My Drive\WPI\Senior Year 1\B Term\CS 2223\Homeworks\HW6\Talley-C-stuff-B22HW6" />
@@ -66,7 +66,7 @@
       <updated>1670884933914</updated>
       <workItem from="1670884935779" duration="8689000" />
       <workItem from="1670960520945" duration="13465000" />
-      <workItem from="1671063607467" duration="8493000" />
+      <workItem from="1671063607467" duration="17173000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up everything&#10;&#10;Problem: code rn is written in 0-based system, while the HW asked for 1 based input.">
       <created>1670974796856</created>
@@ -110,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671087588005</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1 done&#10;&#10;Next: nextLegalPostition">
+      <created>1671090079312</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671090079312</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +128,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="37" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -133,7 +146,8 @@
     <MESSAGE value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: N/A&#10;&#10;Next: Making isLegalPosition Function" />
     <MESSAGE value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1&#10;&#10;Next: Making solution to find what checks are being made to the queen (comparing positions to all attacks)" />
     <MESSAGE value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: cant use Set, since squares ands attacks with the same address have different object addresses.&#10;&#10;Next: fix checkForAttacks&#10; &#10; deal with Zeros" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: cant use Set, since squares ands attacks with the same address have different object addresses.&#10;&#10;Next: fix checkForAttacks&#10; &#10; deal with Zeros" />
+    <MESSAGE value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1 done&#10;&#10;Next: nextLegalPostition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1 done&#10;&#10;Next: nextLegalPostition" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
