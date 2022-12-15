@@ -48,39 +48,49 @@ public class Board {
             allAttacks.addAll(oneQueenAttacks);
         }
 //        check to see if there is any overlap
-//        boolean overlap = checkForDuplicates(allAttacks);
+        boolean overlap = checkForAttacks(position, allAttacks,n);
 
         return overlap;
     }
 
-    // find out if there any attacks in your array that have been duplicated
-//    public static boolean checkForDuplicates(ArrayList<int[]> attacks){
-//        boolean overlap = false;
-//        // put all of your attack positions in a Set Object.
-//        // since a set object does not allow duplicates, we can just compare the sizes of both the set and the ArrayList
-//
-//        Set<int[]> attacksSet = new HashSet<>();
-//        attacksSet.addAll(attacks);
-//
-//        // if the amount of attacks in our Set is different, we know that a duplicate was erased
-//        if(attacks.size() != attacksSet.size()){
-//            overlap = true;
-//            System.out.println(" Queens are attacking each other ");
-//
-//        }
-//        else{
-//            overlap = false;
-//            System.out.println("No Queens are attacking");
-//
-//        }
-//        return overlap;
-//
-//    }
+    // find out if there any attacks in your array are not positions occupied by a queen
+    public static boolean checkForAttacks(ArrayList<Square>position, ArrayList<int[]> allAttacks, int size){
+        boolean overlap = false;
+        // put all of your attack positions in a Set Object.
 
-    public void checkForAttacks(){
+        // add all attacks to a set
+        Set<int[]> attacksSet = new HashSet<>();
+        attacksSet.addAll(allAttacks);
 
+        position.forEach(square -> attacksSet.add(square.location));
+        // take into account: if there is no overlap the Set will be the amount of the attacks + the number of positions
+        int numOverlaps = attacksSet.size() - allAttacks.size() - size;
+        System.out.println(numOverlaps);
+
+
+        ///////// make case for (0,0)
+
+        // add queen square positions to attacks
+
+
+
+        if(numOverlaps != 0){
+            overlap = true;
+            System.out.println(" at least 2 Queens are attacking each other" );
+
+        }
+        else{
+
+            overlap = false;
+            System.out.println("No Queens are attacking");
+
+
+        }
+        return overlap;
 
     }
+
+
 
     //finds the next legal position
     public void nextLegalPosition(Board board,int n){}
