@@ -12,7 +12,14 @@ public class Square {
         this.hasQueen = hasQueen;
         this.location = location;
         this.bSize = bSize;
-        this.attacks = attacks;
+        // if the square is empty, then there are no attacks
+        if(Arrays.equals(location,new int[] {0,0})){
+            this.attacks = new ArrayList<>();
+        }
+        else{
+            this.attacks = attacks;
+        }
+
     }
 
     // changes an int to a square
