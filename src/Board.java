@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Board {
 
@@ -30,16 +28,63 @@ public class Board {
 
 
 
-    // takes in position and n
-    // returns T iff no two Queens are attackinig each other
-    public void isLegalPosition(Board board,int n){
+    public void nextLegalPosition(Board board,int n){}
 
+    // takes in position and n
+    // returns True if there are no invalid 0s and no queens attacking each other
+    public static boolean isLegalPosition(int[] intPosition,int n){
+
+        printBoard(intPosition,n);
+
+        boolean isLegal = true;
         // check that there are no zeros before the first queen
 
+        boolean invalidZero = hasInvalidZeros(intPosition,n);
+
         // check if any of the  queen attacks overlap
+        boolean overlap = hasOverlap(intPosition,n);
+
+        if(invalidZero || overlap){
+            System.out.println("This position is invalid");
+            isLegal = false;
+        }
+        {
+            System.out.println("This position is valid");
+        }
+        return isLegal;
     }
-    public static boolean attacksHaveOverlap(int[] intPosition, int n){
-        printBoard(intPosition,n);
+
+
+
+    // helpers for isLegal Position
+    public static boolean hasInvalidZeros(int[] intPosition, int n){
+        boolean invalid = false;
+        // check where the last position there is a queen
+        int lastQueenIndex = 0;
+        for(int i  = n-1; i>=0; i--){
+
+            if(intPosition[i] != 0 ){
+                lastQueenIndex = i;
+                break;
+            }
+        }
+        // make sure that there are no zeros before that last queen
+        for(int j = 0; j< lastQueenIndex;j++){
+            if(intPosition[j] == 0){
+                invalid = true;
+
+            }
+        }
+//        if(invalid){
+//            System.out.println("There is an empty spot at the top");
+//        }
+//        else {
+//            System.out.println("Valid");
+//        }
+        return invalid;
+    }
+    public static boolean hasOverlap(int[] intPosition, int n){
+
         ArrayList<Square> position = convertArrToSquareArr(intPosition,n);
         ArrayList<int[]> allAttacks = new ArrayList<>();
         // add the attacks from every queen into allAttacks array
@@ -52,48 +97,51 @@ public class Board {
 
         return overlap;
     }
-
     // find out if there any attacks in your array are not positions occupied by a queen
     public static boolean checkForAttacks(ArrayList<Square>position, ArrayList<int[]> allAttacks, int size){
         boolean overlap = false;
         // put all of your attack positions in a Set Object.
-
         // add all attacks to a set
-        Set<int[]> attacksSet = new HashSet<>();
+        ArrayList<int[]> attacksSet = new ArrayList<>();
         attacksSet.addAll(allAttacks);
 
-        position.forEach(square -> attacksSet.add(square.location));
-        // take into account: if there is no overlap the Set will be the amount of the attacks + the number of positions
-        int numOverlaps = attacksSet.size() - allAttacks.size() - size;
-        System.out.println(numOverlaps);
+        // if you find an overlap, change overlap variable to true
+        // this will work for {0,0} square too since this is off the board (meaning that it will never get attacked)
+        for(int[] anAttack: allAttacks){
 
+            if(overlap){
+                break;
+            }
+            for( Square aSquare: position){
+                int [] location = aSquare.location;
+                if(Arrays.equals(location,anAttack)){
+                    overlap = true;
+                    break;
+                }
+            }
+        }
+
+        // take into account: if there is no overlap the Set will be the amount of the attacks + the number of positions
 
         ///////// make case for (0,0)
 
         // add queen square positions to attacks
 
+//            if(overlap){
+//                System.out.println(" at least 2 Queens are attacking each other" );
+//            }
+//            else{
+//                System.out.println("No Queens are attacking");
+//            }
 
 
-        if(numOverlaps != 0){
-            overlap = true;
-            System.out.println(" at least 2 Queens are attacking each other" );
-
-        }
-        else{
-
-            overlap = false;
-            System.out.println("No Queens are attacking");
 
 
-        }
         return overlap;
 
     }
-
-
-
     //finds the next legal position
-    public void nextLegalPosition(Board board,int n){}
+
 
     // find the first solution for n ∈ [4,100]
     // make sure it's the first solution
@@ -134,6 +182,7 @@ public class Board {
             }
         }
         loadBoard(chessBoard);
+
     }
     public static void loadBoard(char[][] gameBoard) {
         for (char[] row : gameBoard) {
@@ -142,5 +191,6 @@ public class Board {
             }
             System.out.println(); // prints a new lime
         }
+        System.out.println();
     }
 }

@@ -14,8 +14,16 @@ public class Main {
 
       ArrayList<Square> ss =   Board.convertArrToSquareArr(new int[] {1,2,3,0,5,6,7,8}, 8);
 
-//        Board.attacksHaveOverlap(new int[] {2,4,6,8,5,3,1,7},8);
-        Board.attacksHaveOverlap(new int[] {1,2,3,4},4);
+      int[] solutionTest = {6,4,7,1,8,2,5,3};
+      int[] solutionTest1= {6,4,7,1,8,0,0,0};
+        Board.isLegalPosition(solutionTest1,8);
+//        Board.attacksHaveOverlap(new int[] {2,4,1,3},4);
+//        int [] a = {1,1};
+////        ArrayList<int[]> s = new ArrayList<>(Arrays.asList(1,2,3));
+//        int [] b = {1,1};
+//        System.out.println(Arrays.equals(a,b));
+
+//        System.out.println(s.contains(a));
 
 
 
