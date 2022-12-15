@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef7c5e9-6870-4ca0-a64f-594641fb1e10" name="Changes" comment="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: N/A&#10;&#10;Next: Making isLegalPosition Function">
+    <list default="true" id="bef7c5e9-6870-4ca0-a64f-594641fb1e10" name="Changes" comment="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1&#10;&#10;Next: Making solution to find what checks are being made to the queen (comparing positions to all attacks)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
       <updated>1670884933914</updated>
       <workItem from="1670884935779" duration="8689000" />
       <workItem from="1670960520945" duration="13465000" />
-      <workItem from="1671063607467" duration="2776000" />
+      <workItem from="1671063607467" duration="5859000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up everything&#10;&#10;Problem: code rn is written in 0-based system, while the HW asked for 1 based input.">
       <created>1670974796856</created>
@@ -90,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670977000649</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1&#10;&#10;Next: Making solution to find what checks are being made to the queen (comparing positions to all attacks)">
+      <created>1671084467362</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671084467362</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,9 +117,22 @@
     <MESSAGE value="Setting up everything&#10;&#10;Problem: code rn is written in 0-based system, while the HW asked for 1 based input." />
     <MESSAGE value="Solved: code is now 1 based input.&#10;&#10;Problem: int array to Square&#10;&#10;Next:" />
     <MESSAGE value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: N/A&#10;&#10;Next: Making isLegalPosition Function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: N/A&#10;&#10;Next: Making isLegalPosition Function" />
+    <MESSAGE value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1&#10;&#10;Next: Making solution to find what checks are being made to the queen (comparing positions to all attacks)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1&#10;&#10;Next: Making solution to find what checks are being made to the queen (comparing positions to all attacks)" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Board.java</url>
+          <line>64</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="position.get(0).location" />
