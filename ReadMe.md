@@ -1,8 +1,19 @@
 # HW 6
+## General
+- **All snapshots are in the "Images" folder outside the src folder**
+- There are test variables to test main functions in `Main.java`. 
+- 
+## Part 1: `isLegalPosition(int[] intPosition,int n)`
 
-- Next:  int array to Square array (setting up all variables properly)
-- for now: int array input is 1-based, while the rest of the code is 0 based
-- array positions are NOT based on chess (letterCol, numberRow), they are based on matrix (row,column)
-- in this function, length is synonymous with size (chess board has "size" 8 here, NOT 64)
-# part 2
-- when an array inputed has no nextValid postion, you will just receive an array of 0s
+- ints[] are used to  represent 1-index based locations.
+- in this function, length is synonymous with size (n = 8 board has "size" 8 here, NOT 64)
+- 
+# Part 2: `nextLegalPosition(int[] intPosition,int n)`
+- when an array has no next valid position, you will just receive an array of 0s
+
+## Part 3: `question3()`
+- Name of snapshot "question3Output"
+- ![](Images/question3Output.png)
+## Part 4: `question4()`
+- Name of output snapshot: "question4Output"
+- ![](Images/question4Output.png)

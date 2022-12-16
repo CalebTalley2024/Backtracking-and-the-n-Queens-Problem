@@ -16,9 +16,16 @@ public class Board {
     // turns a list of numbers into a position
     // with each number, make a square and set attack parameters
 
+    public static void question4(){
+        for(int i = 4; i<=12;i++){
+            getAllFullSolutions(i);
+        }
 
-    public static int[] getFirstSolution(int[] position, int n){
-
+    }
+    public static void question3(){
+        for(int i = 4; i<= 14;i++){
+            getFirstFullSolution(i);
+        }
     }
     public static int[] nextLegalPosition(int[] position, int n){
         /*
@@ -59,6 +66,102 @@ public class Board {
 //        printIntArray(pos);
         return pos;
     }
+    public static boolean isLegalPosition(int[] intPosition,int n){
+
+//        printBoard(intPosition,n);
+
+        boolean isLegal = true;
+        // check that there are no zeros before the first queen
+
+        boolean invalidZero = hasInvalidZeros(intPosition,n);
+
+        // check if any of the  queen attacks overlap
+        boolean overlap = hasOverlap(intPosition,n);
+
+        if(invalidZero || overlap){
+//            System.out.println("This position is invalid");
+            isLegal = false;
+        }
+        else  {
+//            System.out.println("This position is valid");
+        }
+        return isLegal;
+    }
+
+    ////// Helper functions
+    // get all of the full solutions for an nxn board
+    public static ArrayList<int[]> getAllFullSolutions (int n){
+        int[] pos = newBoard(n);
+        ArrayList<int[]> solutions = new ArrayList<>();
+        // when the board is empty, pos will just be an empty array
+        while (!boardIsEmpty(pos)){
+                pos = getNextFullSolution(pos,n);
+            // if we are not at the end of the algorithm,  we add our solutions to our arrayList
+                if(!boardIsEmpty(pos))
+                solutions.add(pos);
+
+        }
+//        System.out.println();
+        int numSolutions = solutions.size();
+        System.out.printf("There are %d solutions to the %d-Queens Problem",numSolutions,n);
+        System.out.println();
+        return solutions;
+    }
+
+
+    // get the first solution with queens on every diagonal
+    public static int[] getFirstFullSolution( int n){
+    // first we get our initial board of size n
+        // this board will contain all 0s except for the first row, which will have a 1 (the left coner)
+        int[] pos = newBoard(n);
+        pos = getNextFullSolution(pos,n);
+        System.out.printf(" The 'first' solution to the n-Queens Problem for n = "+ n + " is ");
+        printIntArray(pos);
+        System.out.println();
+        return pos;
+    }
+    public static  int[] getNextFullSolution(int[] pos, int size ){
+        int n = size;
+        boolean isSolution = false;
+        while(!isSolution){
+            // we pick the first legal position that does not contain any zeros
+            pos = nextLegalPosition(pos,n);
+
+            // terminate if we either get a full solution or when the board does not have any more legal positions to go through
+
+            if(!containZero(pos)|| boardIsEmpty(pos)){
+                isSolution = true;
+            }
+        }
+//        System.out.printf(" The 'first' solution to the n-Queens Problem for n = "+ n + " is ");
+//        printIntArray(pos);
+//        System.out.println();
+        return pos;
+
+    }
+    // check to see if an array has any zeros
+    public static boolean containZero(int[] array ){
+        boolean hasZero = false;
+        for(int aNum: array){
+            if(aNum ==0){
+                hasZero = true;
+            }
+        }
+//        System.out.println(hasZero);
+        return hasZero;
+
+    }
+    public static int[] newBoard(int size){
+    int[] initPositions= new int[size];
+    // we first fill our array with zeros
+    Arrays.fill(initPositions,0);
+    // we set our first row's column to the corner.
+        // this will help nextLegalPostiion make the next move
+    initPositions[0] = 1;
+//    printIntArray(initPositions);
+    return initPositions;
+    }
+
 
     public static int[] nextFromLegalPosition(int[] position, int n){
         int[] pos = position.clone();
@@ -66,7 +169,8 @@ public class Board {
         // if the baord is empty, then just return the board position
         if(!boardIsEmpty(pos)) {
             int lastRow = n - 1;
-            int lastColumn = lastRow;
+            // lastColumn is n because the columns are 1-based
+            int lastColumn = n;
             // get last queen index
             int lastQueenIndex = getLastQueenIndex(pos, n);
             // i is the row
@@ -177,27 +281,7 @@ public class Board {
     }
     // takes in position and n
     // returns True if there are no invalid 0s and no queens attacking each other
-    public static boolean isLegalPosition(int[] intPosition,int n){
 
-//        printBoard(intPosition,n);
-
-        boolean isLegal = true;
-        // check that there are no zeros before the first queen
-
-        boolean invalidZero = hasInvalidZeros(intPosition,n);
-
-        // check if any of the  queen attacks overlap
-        boolean overlap = hasOverlap(intPosition,n);
-
-        if(invalidZero || overlap){
-//            System.out.println("This position is invalid");
-            isLegal = false;
-        }
-       else  {
-//            System.out.println("This position is valid");
-        }
-        return isLegal;
-    }
 
     public static int getLastQueenIndex(int[] intPosition, int n){
         int lastQueenIndex = 0;
@@ -270,19 +354,7 @@ public class Board {
 
         // take into account: if there is no overlap the Set will be the amount of the attacks + the number of positions
 
-        ///////// make case for (0,0)
-
         // add queen square positions to attacks
-
-//            if(overlap){
-//                System.out.println(" at least 2 Queens are attacking each other" );
-//            }
-//            else{
-//                System.out.println("No Queens are attacking");
-//            }
-
-
-
 
         return overlap;
 

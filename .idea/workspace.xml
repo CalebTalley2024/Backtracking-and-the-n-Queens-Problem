@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bef7c5e9-6870-4ca0-a64f-594641fb1e10" name="Changes" comment="Solved: basis of nextValidPosition and it's helpers have been made&#10;&#10;Problem: debugging till the function works&#10;&#10;Next:">
+    <list default="true" id="bef7c5e9-6870-4ca0-a64f-594641fb1e10" name="Changes" comment="Solved: 1,2,3,4&#10;Problem: &#10;&#10;&#10;Next: output for 3 and 4, finalizing ReadMe">
+      <change afterPath="$PROJECT_DIR$/Images/question3Output.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/question4Output.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/ReadMe.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "G:/My Drive/WPI/Senior Year 1/B Term/CS 2223/Homeworks/HW6",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,6 +58,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\My Drive\WPI\Senior Year 1\B Term\CS 2223\Homeworks\HW6\Talley-C-stuff-B22HW6\Images" />
       <recent name="G:\My Drive\WPI\Senior Year 1\B Term\CS 2223\Homeworks\HW6\Talley-C-stuff-B22HW6" />
     </key>
   </component>
@@ -69,7 +72,7 @@
       <updated>1670884933914</updated>
       <workItem from="1670884935779" duration="8689000" />
       <workItem from="1670960520945" duration="13465000" />
-      <workItem from="1671063607467" duration="29211000" />
+      <workItem from="1671063607467" duration="41321000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up everything&#10;&#10;Problem: code rn is written in 0-based system, while the HW asked for 1 based input.">
       <created>1670974796856</created>
@@ -134,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671126106589</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Solved: part2: part 2 done&#10;Problem: Part 3&#10;&#10;After debugging, make sure that Question 3 contains n = 4.....100&#10;Next:">
+      <created>1671137104689</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671137104689</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +176,8 @@
     <MESSAGE value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: Part 1 done&#10;&#10;Next: nextLegalPostition" />
     <MESSAGE value="Solved: Square class and basic funcitions have been done&#10;&#10;Problem: made basis of legal position functions, need to combine them and solve for edge cases.&#10;&#10;Next: nextLegalPostition" />
     <MESSAGE value="Solved: basis of nextValidPosition and it's helpers have been made&#10;&#10;Problem: debugging till the function works&#10;&#10;Next:" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved: basis of nextValidPosition and it's helpers have been made&#10;&#10;Problem: debugging till the function works&#10;&#10;Next:" />
+    <MESSAGE value="Solved: part2: part 2 done&#10;Problem: Part 3&#10;&#10;After debugging, make sure that Question 3 contains n = 4.....100&#10;Next:" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved: part2: part 2 done&#10;Problem: Part 3&#10;&#10;After debugging, make sure that Question 3 contains n = 4.....100&#10;Next:" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
