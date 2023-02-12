@@ -1,4 +1,4 @@
-# HW 6
+<!-- # HW 6 -->
 ## General
 - **All snapshots are in the "Images" folder outside the src folder**
 - There are test variables to test main functions in `Main.java`. 
